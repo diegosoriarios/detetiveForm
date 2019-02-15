@@ -71,3 +71,8 @@
   float: right;
   margin: 0;
 }
+
+#modalStyle {
+  color: #007FFF;
+  overflow: hidden;
+}

@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import Home from './components/home';
 import './App.css';
 import Modal from 'react-modal'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSearch, faTimes)
+
+library.add()
 
 const lugares = [
 	"Cemitério",
@@ -19,7 +26,10 @@ const customStyles = {
 	  right                 : 'auto',
 	  bottom                : 'auto',
 	  marginRight           : '-50%',
-	  transform             : 'translate(-50%, -50%)'
+		transform             : 'translate(-50%, -50%)',
+		width									:	'50%',
+		height								:	'10%',
+		textAlign							: 'center',
 	}
 };
 
@@ -39,8 +49,6 @@ class App extends Component {
 		if(value > 6){
 			value -= 6;
 		}
-		console.log(random)
-		console.log(value)
 		this.setState({modalIsOpen: true, number: value})
 	}
 
@@ -48,7 +56,7 @@ class App extends Component {
     return (
       <div className="App">
         <div id="navbar">
-          <h2 id="left">Detetive</h2>
+          <h2 id="left"><FontAwesomeIcon icon="search" />&nbsp;&nbsp;Detetive</h2>
           <h4 id="right" onClick={() => this.jogarDado()}>Dado</h4>
         </div>
         <Modal
@@ -58,8 +66,10 @@ class App extends Component {
 					style={customStyles}
 					contentLabel="Example Modal"
 					>
-					<h1>{lugares[this.state.number]}</h1>
-					<button id="btn-fechar" onClick={() => this.setState({modalIsOpen: false})}>Fechar</button>
+					<div id="modalStyle">
+						<FontAwesomeIcon id="right" icon="times" onClick={() => this.setState({modalIsOpen: false})}/>
+						<h1>{lugares[this.state.number]}</h1>
+					</div>
 				</Modal>
         <Home />
       </div>
