@@ -43,6 +43,7 @@
   height: 40px;
   line-height: 40px;
   padding: 0 2%;
+  font-size: 0.7em;
 }
 
 #lugares:nth-child(odd), #armas:nth-child(odd), #pessoas:nth-child(odd) {
@@ -75,4 +76,8 @@
 #modalStyle {
   color: #007FFF;
   overflow: hidden;
+}
+
+.checked {
+  text-decoration: line-through;
 }
