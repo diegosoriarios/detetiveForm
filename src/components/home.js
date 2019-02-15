@@ -32,7 +32,7 @@ const Home = () => (
 	<div className="home">
 		<h2>Pessoas</h2>
 		{pessoas.map(nome => (
-            <div id="pessoas" key={nome}>
+            <div className="pessoas" key={nome}>
 				<label>Talvez 
 					<input type="radio" name={nome} defaultChecked={true} value="Talvez" />
 				</label>
@@ -47,7 +47,7 @@ const Home = () => (
 		))}
 		<h2>Lugares</h2>
 		{lugares.map(nome => (
-			<div id="lugares" key={nome}>
+			<div className="lugares" key={nome}>
 				<label>Talvez 
 					<input type="radio" name={nome} defaultChecked={true} value="Talvez" />
 				</label>
@@ -62,7 +62,7 @@ const Home = () => (
 		))}
 		<h2>Armas</h2>
 		{arma.map(nome => (
-			<div id="armas" key={nome}>
+			<div className="armas" key={nome}>
 				<label>Talvez 
 					<input type="radio" name={nome} defaultChecked={true} value="Talvez" />
 				</label>
