@@ -34,7 +34,7 @@ const Home = () => (
 		{pessoas.map(nome => (
             <div className="pessoas" key={nome}>
 				<label>Talvez 
-					<input type="radio" name={nome} defaultChecked={true} value="Talvez" />
+					<input type="radio" name={nome} value="Talvez" />
 				</label>
 				<label>Sim
 					<input type="radio" name={nome} value="Sim" />
@@ -49,7 +49,7 @@ const Home = () => (
 		{lugares.map(nome => (
 			<div className="lugares" key={nome}>
 				<label>Talvez 
-					<input type="radio" name={nome} defaultChecked={true} value="Talvez" />
+					<input type="radio" name={nome} value="Talvez" />
 				</label>
 				<label>Sim
 					<input type="radio" name={nome} value="Sim" />
@@ -64,7 +64,7 @@ const Home = () => (
 		{arma.map(nome => (
 			<div className="armas" key={nome}>
 				<label>Talvez 
-					<input type="radio" name={nome} defaultChecked={true} value="Talvez" />
+					<input type="radio" name={nome} value="Talvez" />
 				</label>
 				<label>Sim
 					<input type="radio" name={nome} value="Sim" />
