@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: white;
+  background-color: #007FFF;
 }
 
 .App-logo {
@@ -30,4 +32,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.home {
+  text-align: justify;
+  padding: 5% 5%;
+}
+
+#lugares, #armas, #pessoas {
+  height: 25px;
+  line-height: 25px;
+  padding: 0 2%;
+}
+
+#lugares:nth-child(odd), #armas:nth-child(odd), #pessoas:nth-child(odd) {
+  background-color: white;;
+  color: #007FFF;
+}
+
+.home span {
+  float: right;
+}
+
+#navbar {
+  background-color: white;
+  color: #007FFF;
+  height: 75px;
+  line-height: 75px;
+  padding: 1% 5%;
+}
+
+#left {
+  float: left;
+  margin: 0;
+}
+
+#right {
+  float: right;
+  margin: 0;
 }
