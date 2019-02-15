@@ -44,11 +44,13 @@ class App extends Component {
   }
 
   jogarDado = () => {
-		let random = Math.floor(Math.random() * 6)	
+		let random = Math.floor(Math.random() * 6 + 1)
 		let value = this.state.number + random
 		if(value > 6){
 			value -= 6;
 		}
+		console.log(random)
+		console.log(value)
 		this.setState({modalIsOpen: true, number: value})
 	}
 
@@ -68,7 +70,7 @@ class App extends Component {
 					>
 					<div id="modalStyle">
 						<FontAwesomeIcon id="right" icon="times" onClick={() => this.setState({modalIsOpen: false})}/>
-						<h1>{lugares[this.state.number]}</h1>
+						<h1>{lugares[this.state.number - 1]}</h1>
 					</div>
 				</Modal>
         <Home />
