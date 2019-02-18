@@ -33,6 +33,8 @@ const customStyles = {
 	}
 };
 
+window.onbeforeunload = function () {return false;}
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -40,8 +42,8 @@ class App extends Component {
       modalIsOpen: false,
       number: 0
     }
-    Modal.setAppElement("#root")
-  }
+		Modal.setAppElement("#root")	
+	}
 
   jogarDado = () => {
 		let random = Math.floor(Math.random() * 6 + 1)
