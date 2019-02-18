@@ -27,8 +27,14 @@
   color: #0053AD;
 }
 
-.home span {
+.home select:nth-child(even) {
   float: right;
+  margin-top: 15px;
+  background-color: #0053AD;
+  outline: none;
+  border: 2px solid white;
+  color: white;
+  text-align-last: center;
 }
 
 #navbar {
