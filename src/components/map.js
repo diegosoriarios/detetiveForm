@@ -9,7 +9,7 @@ const tiles = [
     ['p', 'p', 'p', 'p', 'p', 'p', 'p', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'H', 'h', 'h', 'h', 'h'],
     ['p', 'p', 'p', 'p', 'p', 'p', 'p', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'h', 'h', 'h', 'h', 'h'],
     ['p', 'p', 'p', 'p', 'p', 'p', 'p', '0', '0', '0', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', '0', '0', '0', 'h', 'h', 'h', 'h', 'h'],
-    ['p', 'p', 'p', 'p', 'p', 'p', 'p', '0', '0', '0', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'N', '0', '0', '0', 'h', 'h', 'h', 'h', 'h'],
+    ['p', 'p', 'p', 'p', 'p', 'p', 'p', '0', '0', '0', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', '0', '0', '0', 'h', 'h', 'h', 'h', 'h'],
     ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', '0', '0', '0', 'h', 'h', 'H', 'h', 'h'],
     ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
     ['f', 'f', 'f', 'F', 'f', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
@@ -24,7 +24,11 @@ const tiles = [
 ]
 
 class Map extends Component {
-    
+    handleChange = (i, j) => {
+        console.log(i)
+        console.log(j)
+        this.props.change(i, j)
+    }    
 
     renderTiles = () => {
         return tiles.map((pos, i) => {
@@ -55,10 +59,19 @@ class Map extends Component {
                     default:
                         break;
                 }
+                let label 
                 if(this.props.position[0] === i && this.props.position[1] === j){
-                    return <div style={{backgroundColor: color}}>X</div> 
+                    //return <div style={{backgroundColor: color}}>X</div> 
+                    label = 'X'
+                }else{
+                    label = 'z'
                 }
-                return <div style={{backgroundColor: color}}>&nbsp;</div>
+                return (
+                    <div 
+                        style={{backgroundColor: color, color: label === 'z' ? 'transparent' : 'black'}}
+                        onClick={() => this.handleChange(i, j)}
+                    >{label}</div>
+                );
             })
         })
     }
