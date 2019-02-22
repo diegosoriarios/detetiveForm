@@ -73,10 +73,6 @@ label {
 .tableTile {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-}
-
-.tableTile .tile {
+  grid-template-columns: repeat(26, 1fr);
   border: 1px solid black;
-  margin: 0;
 }
