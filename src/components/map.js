@@ -25,9 +25,13 @@ const tiles = [
 
 class Map extends Component {
     handleChange = (i, j) => {
-        console.log(i)
-        console.log(j)
-        this.props.change(i, j)
+        let x = this.props.position[0] - i
+        let y = this.props.position[1] - j
+        if(x + y < this.props.lugar){
+            this.props.change(i, j)
+        }else{
+            console.log('Escolha outra posição')
+        }
     }    
 
     renderTiles = () => {
