@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './components/home';
 import './App.css';
 import Modal from 'react-modal'
+import Map from './components/map';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -9,7 +10,7 @@ import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch, faTimes)
 
 library.add()
-
+/*
 const lugares = [
 	"Cemitério",
 	"Mansão",
@@ -17,7 +18,7 @@ const lugares = [
 	"Hotel",
 	"Hospital",
 	"Floricultura"
-]
+]*/
 
 const customStyles = {
 	content : {
@@ -28,7 +29,7 @@ const customStyles = {
 	  marginRight           : '-50%',
 		transform             : 'translate(-50%, -50%)',
 		width									:	'50%',
-		height								:	'10%',
+		height								:	'50%',
 		textAlign							: 'center',
 	}
 };
@@ -40,20 +41,30 @@ class App extends Component {
     super(props)
     this.state = {
       modalIsOpen: false,
-      number: 0
+			number: 0,
+			position: [5, 5]
     }
 		Modal.setAppElement("#root")	
 	}
 
   jogarDado = () => {
-		let random = Math.floor(Math.random() * 6 + 1)
+		let random = Math.floor(Math.random() * 100)
+		random = random % 12
 		let value = this.state.number + random
+		/*
 		if(value > 6){
 			value -= 6;
 		}
 		console.log(random)
 		console.log(value)
+		*/
 		this.setState({modalIsOpen: true, number: value})
+	}
+
+	changePosition = (x, y) => {
+		this.setState({
+			position: [x, y]
+		})
 	}
 
   render() {
@@ -72,7 +83,9 @@ class App extends Component {
 					>
 					<div id="modalStyle">
 						<FontAwesomeIcon id="right" icon="times" onClick={() => this.setState({modalIsOpen: false})}/>
-						<h1>{lugares[this.state.number - 1]}</h1>
+						{//<Map lugar={lugares[this.state.number - 1]} />
+						}
+						<Map lugar={this.state.number} change={this.changePosition} position={this.state.position} />
 					</div>
 				</Modal>
         <Home />

@@ -35,7 +35,7 @@ const Home = () => (
             <div className="pessoas" key={nome}>
 				<span>{nome}</span>
 				<select>
-					<option value="placeholder" disabled selected></option>
+					<option value="placeholder" disabled defaultValue></option>
 					<option value="inocente">É Inocente</option>
 					<option value="culpado">É culpado</option>
 					<option value="suspeito">Ainda é suspeito</option>
@@ -47,7 +47,7 @@ const Home = () => (
 			<div className="lugares" key={nome}>
 				<span>{nome}</span>
 				<select>
-					<option value="placeholder" disabled selected></option>
+					<option value="placeholder" disabled defaultValue></option>
 					<option value="inocente">Está limpo</option>
 					<option value="culpado">Foi aqui</option>
 					<option value="suspeito">Ainda é suspeito</option>
@@ -59,7 +59,7 @@ const Home = () => (
 			<div className="armas" key={nome}>
 				<span>{nome}</span>
 				<select>
-					<option value="placeholder" disabled selected></option>
+					<option value="placeholder" disabled defaultValue></option>
 					<option value="inocente">Está limpa</option>
 					<option value="culpado">Foi essa</option>
 					<option value="suspeito">Ainda é suspeita</option>

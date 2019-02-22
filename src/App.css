@@ -69,3 +69,14 @@ label {
   padding: 1%;
   margin: 1%;
 }
+
+.tableTile {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.tableTile .tile {
+  border: 1px solid black;
+  margin: 0;
+}
