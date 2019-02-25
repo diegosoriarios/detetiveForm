@@ -28,7 +28,7 @@ const customStyles = {
 	  bottom                : 'auto',
 	  marginRight           : '-50%',
 		transform             : 'translate(-50%, -50%)',
-		width									:	'90%',
+		width									:	'60%',
 		height								:	'80%',
 		textAlign							: 'center',
 	}
@@ -49,15 +49,13 @@ class App extends Component {
 
   jogarDado = () => {
 		let random = Math.floor(Math.random() * 100)
-		random = random % 12
+		random = random % 6
 		let value = this.state.number + random
-		/*
 		if(value > 6){
 			value -= 6;
 		}
 		console.log(random)
 		console.log(value)
-		*/
 		this.setState({modalIsOpen: true, number: value})
 	}
 

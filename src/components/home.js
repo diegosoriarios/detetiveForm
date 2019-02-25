@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../App.css'
 
 
@@ -28,6 +28,70 @@ const arma = [
 	"Espingarda"
 ]
 
+class Home extends Component {
+	state = {
+		selected: []
+	}
+
+	handleSelect = (item) => {
+		let check = this.state.selected.some(value => {
+			return value === item
+		})
+		if(check){
+			var newArray = this.state.selected
+			for(var i = 0; i < this.state.selected.length; i++){
+				if(this.state.selected[i] === item){
+					newArray.splice(i, 1)
+					this.setState({
+						selected: newArray
+					})
+					break;
+				}
+			}
+		}else{
+			this.setState({
+				selected: this.state.selected.concat(item)
+			})
+		}
+	}
+
+	renderList = item => {
+		return item.map((nome, i) => {
+			return (
+				<li key={i} className={this.state.selected.some(value => {return value === nome}) ? 'normal' : 'slct'} onClick={() => this.handleSelect(nome)}>
+					<span>{nome}</span>
+				</li>
+			);
+		})
+	}
+
+	render(){
+		return(
+			<div className="home">
+				<div>
+					<ul className="pessoas">
+						<p>Pessoas</p>
+						{this.renderList(pessoas)}
+					</ul>
+				</div><br />
+				<div>
+					<ul className="lugares">
+						<p>Lugares</p>
+						{this.renderList(lugares)}
+					</ul>
+				</div><br />
+				<div>
+					<ul className="armas">
+						<p>Armas</p>
+						{this.renderList(arma)}
+					</ul>
+				</div>
+			</div>
+		);
+	}
+}
+
+/*
 const Home = () => (
 	<div className="home">
 		<h2>Pessoas</h2>
@@ -69,4 +133,5 @@ const Home = () => (
 	</div>
 );
 
+*/
 export default Home;
