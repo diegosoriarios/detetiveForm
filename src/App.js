@@ -10,15 +10,6 @@ import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch, faTimes)
 
 library.add()
-/*
-const lugares = [
-	"Cemitério",
-	"Mansão",
-	"Prefeitura",
-	"Hotel",
-	"Hospital",
-	"Floricultura"
-]*/
 
 const customStyles = {
 	content : {
@@ -42,7 +33,7 @@ class App extends Component {
     this.state = {
       modalIsOpen: false,
 			number: 0,
-			position: [5, 5]
+			position: 0
     }
 		Modal.setAppElement("#root")	
 	}
@@ -59,9 +50,9 @@ class App extends Component {
 		this.setState({modalIsOpen: true, number: value})
 	}
 
-	changePosition = (x, y) => {
+	changePosition = (x) => {
 		this.setState({
-			position: [x, y]
+			position: x
 		})
 	}
 
@@ -81,9 +72,7 @@ class App extends Component {
 					>
 					<div id="modalStyle">
 						<FontAwesomeIcon id="right" icon="times" onClick={() => this.setState({modalIsOpen: false})}/>
-						{//<Map lugar={lugares[this.state.number - 1]} />
-						}
-						<Map lugar={this.state.number} change={this.changePosition} position={this.state.position} />
+						<Map lugar={this.state.number} pos={this.state.position} change={this.changePosition.bind(this)}/>
 					</div>
 				</Modal>
         <Home />
