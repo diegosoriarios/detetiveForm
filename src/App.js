@@ -20,7 +20,7 @@ const customStyles = {
 	  marginRight           : '-50%',
 		transform             : 'translate(-50%, -50%)',
 		width									:	'60%',
-		height								:	'80%',
+		height								:	'50%',
 		textAlign							: 'center',
 	}
 };
