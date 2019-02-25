@@ -3,29 +3,29 @@ import '../App.css'
 
 
 const pessoas = [
-	"Coronel Mostarda",
-	"Advogado",
-	"Médica",
-	"Florista",
-	"Chefe de Cozinha",
-	"Dançarina"
+	{nome: "Coronel Mostarda", img: ''},
+	{nome: "Advogado", img: ''},
+	{nome: "Médica", img: ''},
+	{nome: "Florista", img: ''},
+	{nome: "Chefe de Cozinha", img: ''},
+	{nome: "Dançarina", img: ''}
 ]
 
 const lugares = [
-	"Cemitério",
-	"Mansão",
-	"Prefeitura",
-	"Hotel",
-	"Hospital",
-	"Floricultura"
+	{nome: "Cemitério", img: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/c7/4a/ff/padre-reus-cemiterio.jpg'},
+	{nome: "Mansão", img: 'http://s2.glbimg.com/AUD_yBtATcWOC_MG46kR6vQT5_0=/smart/e.glbimg.com/og/ed/f/original/2017/09/19/floydmayweather_bh23.jpg'},
+	{nome: "Prefeitura", img: 'http://www.pmpf.rs.gov.br/servicos/geral/multimidia/I2013-05-07_06:26:46_c8037.jpg'},
+	{nome: "Hotel", img: 'https://www.ahstatic.com/photos/7205_ho_00_p_2048x1536.jpg'},
+	{nome: "Hospital", img: 'https://www.healthline.com/hlcmsresource/images/imce/hospital-acquired-nosocomial-infections_thumb.jpg'},
+	{nome: "Floricultura", img: 'https://www.tribunapr.com.br/wp-content/uploads/sites/1/2018/07/floricultura-furtos-atila-alberti3-w-825x550.jpg?a86372'}
 ]
 
 const arma = [
-	"Faca",
-	"Soco Inglês",
-	"Veneno",
-	"Tesoura",
-	"Espingarda"
+	{nome: "Faca", img: ''},
+	{nome: "Soco Inglês", img: ''},
+	{nome: "Veneno", img: ''},
+	{nome: "Tesoura", img: ''},
+	{nome: "Espingarda", img: ''}
 ]
 
 class Home extends Component {
@@ -59,7 +59,8 @@ class Home extends Component {
 		return item.map((nome, i) => {
 			return (
 				<li key={i} className={this.state.selected.some(value => {return value === nome}) ? 'normal' : 'slct'} onClick={() => this.handleSelect(nome)}>
-					<span>{nome}</span>
+					<span>{nome.nome}</span>
+					<img src={nome.img} alt={nome.nome} />
 				</li>
 			);
 		})

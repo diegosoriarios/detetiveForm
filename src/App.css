@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-.lugares li, .armas li, .pessoas li {
+.lugares li, .armas li, .pessoas li{
   display: inline-flex;
   border: 1px solid black;
   width: 25%;
@@ -36,12 +36,21 @@
   position: relative;
 }
 
+.lugares img, .armas img, .pessoas img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 .lugares span, .armas span, .pessoas span {
   line-height: 1;
   position: absolute;
   bottom: 10px;
   width: 100%;
   font-weight: bold;
+  z-index: 10;
 }
 
 #navbar {
@@ -67,14 +76,18 @@
   overflow: hidden;
 }
 
-
-
 .slct{
-  color: black;
+  color: white;
+  text-shadow: 1px 1px #000;
 }
 
-.normal {
-  color: red;
+.normal span {
+  text-decoration: line-through;
+}
+
+.normal img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .dado {

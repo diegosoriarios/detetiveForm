@@ -45,8 +45,6 @@ class App extends Component {
 		if(value > 6){
 			value -= 6;
 		}
-		console.log(random)
-		console.log(value)
 		this.setState({modalIsOpen: true, number: value})
 	}
 
